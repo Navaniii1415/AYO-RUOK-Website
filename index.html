@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AYO - RUOK | Security — Discord Security, Perfected</title>
+<meta name="description" content="AYO - RUOK | Security is a premium Discord security bot — anti-raid, anti-nuke and verification built for servers that can't afford to fail.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== LOADER ===== -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <svg class="loader-glyph" viewBox="0 0 100 100">
+      <polyline class="loader-bolt" points="52,4 30,52 48,52 40,96 74,42 54,42 62,4" />
+    </svg>
+    <div class="loader-word">
+      <span>AYO</span><span>-</span><span>RUOK</span><span>| Security</span>
+    </div>
+    <div class="loader-bar"><span></span></div>
+  </div>
+</div>
+
+<!-- ===== CURSOR ===== -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<!-- ===== BACKGROUND LAYERS ===== -->
+<div class="bg-fixed" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-veins"></div>
+  <div class="bg-noise"></div>
+  <div class="bg-particles" id="bgParticles"></div>
+</div>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand" data-reveal>
+      <span class="brand-mark">
+        <img src="assets/img/logo.png" alt="" width="34" height="34">
+      </span>
+      <span class="brand-word">AYO - RUOK | Security</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#pieces"><span>Defenses</span></a>
+      <a href="#board"><span>Console</span></a>
+      <a href="#deploy-steps"><span>Deploy</span></a>
+      <a href="#trust"><span>Trust</span></a>
+      <a href="#pricing"><span>Access</span></a>
+    </nav>
+
+    <div class="nav-cta">
+      <a href="#deploy" class="btn btn-ghost">
+        <span>Sign in</span>
+      </a>
+      <a href="#deploy" class="btn btn-primary">
+        <span class="btn-primary-glow"></span>
+        <span class="btn-txt">Add to Discord</span>
+      </a>
+    </div>
+
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="nav-mobile" id="navMobile">
+    <a href="#pieces">Defenses</a>
+    <a href="#board">Console</a>
+    <a href="#deploy-steps">Deploy</a>
+    <a href="#trust">Trust</a>
+    <a href="#pricing">Access</a>
+    <a href="#deploy" class="btn btn-primary"><span class="btn-txt">Add to Discord</span></a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-banner" aria-hidden="true">
+      <img src="assets/img/banner.jpg" alt="" class="hero-banner-img">
+      <div class="hero-banner-fade"></div>
+    </div>
+
+    <div class="hero-inner">
+      <p class="eyebrow" data-reveal>
+        <span class="eyebrow-dot"></span>
+        Now guarding <span class="eyebrow-count" id="serverCount">42,918</span> servers
+      </p>
+
+      <h1 class="hero-title" data-reveal>
+        <span class="line">Your server's</span>
+        <span class="line hero-title-glow">last line of defense.</span>
+      </h1>
+
+      <p class="hero-sub" data-reveal>
+        AYO - RUOK | Security sits at the edge of your server and doesn't blink. Raids, nukes,
+        scam links and compromised admins — stopped before your members
+        even notice.
+      </p>
+
+      <div class="hero-actions" data-reveal>
+        <a href="#deploy" class="btn btn-primary btn-lg">
+          <span class="btn-primary-glow"></span>
+          <span class="btn-txt">Deploy AYO - RUOK | Security — it's free</span>
+          <svg class="btn-arrow" viewBox="0 0 16 16"><path d="M2 8h11M9 3l5 5-5 5"/></svg>
+        </a>
+        <a href="#board" class="btn btn-outline btn-lg">
+          <span class="btn-txt">See the console</span>
+        </a>
+      </div>
+
+      <div class="hero-proof" data-reveal>
+        <div class="proof-stat">
+          <span class="proof-num" data-count="212">0</span><span class="proof-suffix">M+</span>
+          <span class="proof-label">threats blocked</span>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-stat">
+          <span class="proof-num" data-count="4">0</span><span class="proof-suffix">ms</span>
+          <span class="proof-label">avg. response</span>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-stat">
+          <span class="proof-num" data-count="99">0</span><span class="proof-suffix">.98%</span>
+          <span class="proof-label">uptime</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-sentinel" aria-hidden="true">
+      <div class="sentinel-ring r1"></div>
+      <div class="sentinel-ring r2"></div>
+      <div class="sentinel-ring r3"></div>
+      <img src="assets/img/logo.png" alt="" class="sentinel-logo" id="sentinelLogo">
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-cue-line"><span></span></div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE ===== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>ANTI&#8209;RAID</span><span class="dot">&#9670;</span>
+      <span>ANTI&#8209;NUKE</span><span class="dot">&#9670;</span>
+      <span>VERIFICATION</span><span class="dot">&#9670;</span>
+      <span>THREAT&nbsp;INTEL</span><span class="dot">&#9670;</span>
+      <span>AUDIT&nbsp;LOGS</span><span class="dot">&#9670;</span>
+      <span>REAL&#8209;TIME&nbsp;ALERTS</span><span class="dot">&#9670;</span>
+      <span>ANTI&#8209;RAID</span><span class="dot">&#9670;</span>
+      <span>ANTI&#8209;NUKE</span><span class="dot">&#9670;</span>
+      <span>VERIFICATION</span><span class="dot">&#9670;</span>
+      <span>THREAT&nbsp;INTEL</span><span class="dot">&#9670;</span>
+      <span>AUDIT&nbsp;LOGS</span><span class="dot">&#9670;</span>
+      <span>REAL&#8209;TIME&nbsp;ALERTS</span><span class="dot">&#9670;</span>
+    </div>
+  </div>
+
+  <!-- ===== PIECES / FEATURES ===== -->
+  <section class="pieces" id="pieces">
+    <div class="section-head">
+      <p class="section-eyebrow" data-reveal>The Pieces</p>
+      <h2 class="section-title" data-reveal>Every piece has a role.<br>Together, they hold the board.</h2>
+      <p class="section-sub" data-reveal>AYO - RUOK | Security isn't one filter — it's a full formation. Each module watches a different attack surface, all reporting to the same console.</p>
+    </div>
+
+    <div class="piece-grid">
+      <article class="piece-card piece-card--lg" data-reveal data-tilt>
+        <div class="piece-card-glow"></div>
+        <div class="piece-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6l8-4z"/></svg>
+        </div>
+        <h3>Anti&#8209;Nuke Core</h3>
+        <p>Mass bans, channel wipes, webhook floods and role hijacks are detected and reversed in milliseconds — before a compromised admin can finish the job.</p>
+        <div class="piece-tag">Core module</div>
+      </article>
+
+      <article class="piece-card" data-reveal data-tilt>
+        <div class="piece-card-glow"></div>
+        <div class="piece-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 12h16M4 6h16M4 18h10"/></svg>
+        </div>
+        <h3>Raid Shield</h3>
+        <p>Join-rate analysis stops coordinated raids and bot swarms at the gate, automatically locking down invites when patterns spike.</p>
+      </article>
+
+      <article class="piece-card" data-reveal data-tilt>
+        <div class="piece-card-glow"></div>
+        <div class="piece-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M5 21c0-4 3-6 7-6s7 2 7 6"/></svg>
+        </div>
+        <h3>Smart Verification</h3>
+        <p>Behavioural and captcha-based screening filters alt accounts and scripted joins without adding friction for real members.</p>
+      </article>
+
+      <article class="piece-card" data-reveal data-tilt>
+        <div class="piece-card-glow"></div>
+        <div class="piece-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <h3>Link &amp; Scam Filter</h3>
+        <p>Phishing domains, nitro scams and token grabbers are cross-checked against a threat feed updated across every server AYO - RUOK | Security guards.</p>
+      </article>
+
+      <article class="piece-card" data-reveal data-tilt>
+        <div class="piece-card-glow"></div>
+        <div class="piece-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 19V5m5 14V9m5 10V3m5 16v-7"/></svg>
+        </div>
+        <h3>Full Audit Trail</h3>
+        <p>Every action AYO - RUOK | Security takes — and every action it stops — is logged, timestamped and reversible from the console.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== BOARD / CONSOLE SHOWCASE ===== -->
+  <section class="board" id="board">
+    <div class="board-inner">
+      <div class="board-copy">
+        <p class="section-eyebrow" data-reveal>The Board</p>
+        <h2 class="section-title" data-reveal>Command, not just monitoring.</h2>
+        <p class="section-sub" data-reveal>The console gives you the whole board at a glance — live threat status, member flow and every module's posture in one dark, quiet interface.</p>
+
+        <ul class="board-list" data-reveal>
+          <li><span class="board-check">&#10003;</span> Live incident timeline, second by second</li>
+          <li><span class="board-check">&#10003;</span> One-click lockdown for the whole server</li>
+          <li><span class="board-check">&#10003;</span> Per-module sensitivity tuning</li>
+          <li><span class="board-check">&#10003;</span> Role-based access for your mod team</li>
+        </ul>
+
+        <a href="#deploy" class="btn btn-outline" data-reveal><span class="btn-txt">Preview the console</span></a>
+      </div>
+
+      <div class="board-panel" data-reveal data-tilt-soft>
+        <div class="panel-glow"></div>
+        <div class="panel-chrome">
+          <span></span><span></span><span></span>
+          <div class="panel-chrome-title">AYO - RUOK | Security — server console</div>
+        </div>
+        <div class="panel-body">
+          <div class="panel-row panel-row--status">
+            <div class="status-pulse"></div>
+            <span>All systems armed</span>
+            <span class="panel-time" id="panelClock">00:00:00</span>
+          </div>
+
+          <div class="panel-grid">
+            <div class="panel-stat">
+              <span class="panel-stat-label">Members watched</span>
+              <span class="panel-stat-num" data-count="18420">0</span>
+            </div>
+            <div class="panel-stat">
+              <span class="panel-stat-label">Blocked today</span>
+              <span class="panel-stat-num" data-count="317">0</span>
+            </div>
+            <div class="panel-stat">
+              <span class="panel-stat-label">Active modules</span>
+              <span class="panel-stat-num" data-count="12">0</span>
+            </div>
+          </div>
+
+          <div class="panel-log">
+            <div class="log-line"><span class="log-tag log-tag--ok">BLOCKED</span> mass-ban attempt &middot; 14 accounts &middot; reverted</div>
+            <div class="log-line"><span class="log-tag log-tag--warn">FLAGGED</span> webhook created outside allow-list</div>
+            <div class="log-line"><span class="log-tag log-tag--ok">BLOCKED</span> nitro-scam link in #general</div>
+            <div class="log-line"><span class="log-tag log-tag--ok">VERIFIED</span> 6 new members &middot; behavioural pass</div>
+            <div class="log-line typing"><span class="log-tag log-tag--live">LIVE</span> watching 3 join spikes<span class="log-cursor">&#9611;</span></div>
+          </div>
+
+          <div class="panel-bars">
+            <div class="panel-bar"><span style="--h:38%"></span></div>
+            <div class="panel-bar"><span style="--h:64%"></span></div>
+            <div class="panel-bar"><span style="--h:29%"></span></div>
+            <div class="panel-bar"><span style="--h:81%"></span></div>
+            <div class="panel-bar"><span style="--h:47%"></span></div>
+            <div class="panel-bar"><span style="--h:70%"></span></div>
+            <div class="panel-bar"><span style="--h:53%"></span></div>
+            <div class="panel-bar"><span style="--h:90%"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DEPLOY STEPS ===== -->
+  <section class="deploy-steps" id="deploy-steps">
+    <div class="section-head">
+      <p class="section-eyebrow" data-reveal>Deployment</p>
+      <h2 class="section-title" data-reveal>Three moves to a guarded server.</h2>
+    </div>
+
+    <div class="steps-rail" data-reveal>
+      <div class="steps-line"><span class="steps-line-fill" id="stepsLineFill"></span></div>
+
+      <div class="step" data-tilt-soft>
+        <div class="step-node"><span>Move&nbsp;1</span></div>
+        <h3>Invite AYO - RUOK | Security</h3>
+        <p>Add AYO - RUOK | Security with a single click — no setup wizard, no config files to write by hand.</p>
+      </div>
+
+      <div class="step" data-tilt-soft>
+        <div class="step-node"><span>Move&nbsp;2</span></div>
+        <h3>Set the formation</h3>
+        <p>Pick a protection preset or tune each module yourself. AYO - RUOK | Security learns your server's normal traffic within hours.</p>
+      </div>
+
+      <div class="step" data-tilt-soft>
+        <div class="step-node"><span>Move&nbsp;3</span></div>
+        <h3>Hold the line</h3>
+        <p>AYO - RUOK | Security arms itself automatically. You'll only hear from it when something needs your call.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ===== LIVE CONSOLE (signature section) ===== -->
+  <section class="console" id="console">
+    <div class="console-layout">
+      <div class="console-text">
+        <p class="section-eyebrow" data-reveal>Live Console</p>
+        <h2 class="section-title" data-reveal>Moderation that <span class="title-accent">reacts instantly</span>.</h2>
+        <p class="section-sub" data-reveal>No dashboards to dig through mid-raid. Every command runs straight from Discord and responds in milliseconds.</p>
+        <ul class="feature-list" data-reveal>
+          <li><span class="board-check">&#10003;</span><span><b>Slash-command native</b> — every action is typed, logged, and reversible.</span></li>
+          <li><span class="board-check">&#10003;</span><span><b>Server-wide lockdown</b> in a single command when a raid is detected.</span></li>
+          <li><span class="board-check">&#10003;</span><span><b>Full audit trail</b> for every mute, ban, and permission change.</span></li>
+        </ul>
+      </div>
+      <div class="terminal" data-reveal data-tilt-soft>
+        <div class="terminal-head">
+          <span class="t-dot"></span><span class="t-dot"></span><span class="t-dot"></span>
+          <span>ayo-ruok — #mod-console</span>
+        </div>
+        <div class="terminal-body" id="terminalBody" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="about-container">
+      <div class="about-text">
+        <p class="section-eyebrow" data-reveal>About Us</p>
+        <h2 class="section-title" data-reveal>The <span class="title-accent">premium</span> security bot.</h2>
+        <p data-reveal>
+          AYO - RUOK | Security is a premium Discord security and moderation bot built to protect communities
+          from raids, spam, and malicious activity. Our goal is fast, reliable, intelligent
+          protection — while keeping server management simple and intuitive.
+        </p>
+        <ul class="about-features-list" data-reveal>
+          <li><span class="board-check">&#10003;</span> AI-powered threat detection</li>
+          <li><span class="board-check">&#10003;</span> Real-time moderation logs</li>
+          <li><span class="board-check">&#10003;</span> Customizable security rules</li>
+          <li><span class="board-check">&#10003;</span> Dedicated 24/7 support team</li>
+        </ul>
+      </div>
+      <div class="about-image-wrap" data-reveal data-tilt-soft>
+        <div class="glow-ring"></div>
+        <div class="orbit-ring"></div>
+        <img src="assets/img/logo.png" alt="AYO - RUOK | Security logo">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST ===== -->
+  <section class="trust" id="trust">
+    <div class="section-head">
+      <p class="section-eyebrow" data-reveal>Trust</p>
+      <h2 class="section-title" data-reveal>Trusted by mod teams who don't get second chances.</h2>
+    </div>
+
+    <div class="trust-grid">
+      <blockquote class="trust-card" data-reveal data-tilt>
+        <p>&ldquo;We lost a 40k member server to a nuke in 2023. AYO - RUOK | Security caught the same attempt on our new server in under two seconds.&rdquo;</p>
+        <footer><span class="trust-avatar" style="--c:#a78bfa"></span><div><strong>Head Admin</strong><span>90k-member gaming community</span></div></footer>
+      </blockquote>
+      <blockquote class="trust-card" data-reveal data-tilt>
+        <p>&ldquo;The console is the first security dashboard our volunteer mods actually understand without a manual.&rdquo;</p>
+        <footer><span class="trust-avatar" style="--c:#7c3aed"></span><div><strong>Community Manager</strong><span>NFT &amp; trading server</span></div></footer>
+      </blockquote>
+      <blockquote class="trust-card" data-reveal data-tilt>
+        <p>&ldquo;Setup took four minutes. It flagged a compromised mod account on day one.&rdquo;</p>
+        <footer><span class="trust-avatar" style="--c:#c4b5fd"></span><div><strong>Server Owner</strong><span>Dev &amp; open-source hub</span></div></footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section class="pricing" id="pricing">
+    <div class="section-head">
+      <p class="section-eyebrow" data-reveal>Access</p>
+      <h2 class="section-title" data-reveal>Guard one channel or the whole realm.</h2>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card" data-reveal data-tilt-soft>
+        <h3>Garrison</h3>
+        <p class="price-desc">Core protection for growing servers.</p>
+        <div class="price-num"><span>Free</span></div>
+        <ul>
+          <li>Anti-raid &amp; anti-nuke core</li>
+          <li>Basic verification</li>
+          <li>7-day audit log</li>
+        </ul>
+        <a href="#deploy" class="btn btn-outline"><span class="btn-txt">Deploy free</span></a>
+      </div>
+
+      <div class="price-card price-card--feat" data-reveal data-tilt-soft>
+        <div class="price-badge">Most deployed</div>
+        <h3>Stronghold</h3>
+        <p class="price-desc">Full formation for serious communities.</p>
+        <div class="price-num"><span>$9</span><small>/mo</small></div>
+        <ul>
+          <li>Everything in Garrison</li>
+          <li>Advanced threat intel feed</li>
+          <li>Unlimited audit history</li>
+          <li>Priority incident response</li>
+        </ul>
+        <a href="#deploy" class="btn btn-primary"><span class="btn-primary-glow"></span><span class="btn-txt">Deploy Stronghold</span></a>
+      </div>
+
+      <div class="price-card" data-reveal data-tilt-soft>
+        <h3>Citadel</h3>
+        <p class="price-desc">Custom coverage for large-scale networks.</p>
+        <div class="price-num"><span>Let's talk</span></div>
+        <ul>
+          <li>Everything in Stronghold</li>
+          <li>Dedicated response engineer</li>
+          <li>Custom module development</li>
+        </ul>
+        <a href="#deploy" class="btn btn-outline"><span class="btn-txt">Contact us</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="deploy" id="deploy">
+    <div class="deploy-glow" aria-hidden="true"></div>
+    <img src="assets/img/logo.png" alt="" class="deploy-logo" aria-hidden="true">
+    <p class="section-eyebrow" data-reveal>Ready when you are</p>
+    <h2 class="deploy-title" data-reveal>Put AYO - RUOK | Security on the board.</h2>
+    <p class="deploy-sub" data-reveal>Free to deploy. Armed in under a minute.</p>
+    <a href="#" class="btn btn-primary btn-lg" data-reveal>
+      <span class="btn-primary-glow"></span>
+      <span class="btn-txt">Add AYO - RUOK | Security to Discord</span>
+      <svg class="btn-arrow" viewBox="0 0 16 16"><path d="M2 8h11M9 3l5 5-5 5"/></svg>
+    </a>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark"><img src="assets/img/logo.png" alt="" width="30" height="30"></span>
+      <span class="brand-word">AYO - RUOK | Security</span>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="#pieces">Defenses</a>
+      <a href="#board">Console</a>
+      <a href="#pricing">Access</a>
+      <a href="#trust">Trust</a>
+    </nav>
+    <div class="footer-meta">
+      <span>&copy; <span id="year"></span> AYO - RUOK | Security. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
