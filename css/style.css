@@ -180,14 +180,30 @@ html { scrollbar-width: thin; scrollbar-color: var(--violet-600) var(--void); }
 .particle {
   position: absolute; border-radius: 50%;
   background: var(--violet-400);
-  box-shadow: 0 0 8px 1px rgba(167,139,250,.7);
+  box-shadow:
+0 0 10px rgba(167,139,250,.9),
+0 0 18px rgba(167,139,250,.6),
+0 0 28px rgba(167,139,250,.3);
   animation: particle-float linear infinite;
 }
 @keyframes particle-float {
-  0% { transform: translateY(0) translateX(0); opacity: 0; }
-  10% { opacity: .8; }
-  90% { opacity: .5; }
-  100% { transform: translateY(-110vh) translateX(var(--drift, 30px)); opacity: 0; }
+ 0% {
+    transform:translateY(0) translateX(0);
+    opacity:0;
+}
+
+10%{
+    opacity:1;
+}
+
+90%{
+    opacity:.8;
+}
+
+100%{
+    transform:translateY(-110vh) translateX(var(--drift,30px));
+    opacity:0;
+}
 }
 
 /* ==========================================================================
