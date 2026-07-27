@@ -215,9 +215,12 @@
   if (particlesHost && !reduceMotion) {
     const count = window.innerWidth < 700 ? 14 : 28;
     for (let i = 0; i < count; i++) {
-      const p = document.createElement('span');
+      const isDesktop = window.innerWidth >= 1024;
+      const count = isDesktop ? 70 : 14;
       p.className = 'particle';
-      const size = 1 + Math.random() * 2.5;
+      const size = isDesktop
+      ? 2 + Math.random() * 3
+      : 1 + Math.random() * 2.5;
       p.style.width = `${size}px`;
       p.style.height = `${size}px`;
       p.style.left = `${Math.random() * 100}%`;
@@ -225,7 +228,11 @@
       p.style.setProperty('--drift', `${(Math.random() - 0.5) * 80}px`);
       p.style.animationDuration = `${14 + Math.random() * 16}s`;
       p.style.animationDelay = `${Math.random() * 20}s`;
-      p.style.opacity = String(0.3 + Math.random() * 0.5);
+      p.style.opacity = String(
+    isDesktop
+        ? 0.55 + Math.random() * 0.45
+        : 0.3 + Math.random() * 0.5
+);
       particlesHost.appendChild(p);
     }
   }
